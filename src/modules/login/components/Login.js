@@ -16,7 +16,7 @@ const desiredWidth = (43 / 100) * screenWidth;
 const screenHeight = Dimensions.get("window").height;
 const desiredHeight = (20 / 100) * screenHeight;
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -49,7 +49,7 @@ export default function LoginScreen() {
         secureTextEntry
       />
       <Pressable
-        onPress={handleLogin}
+        onPress={() => navigation.navigate("Home")}
         style={{
           marginTop: 20,
           height: 50,
